@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    padding: 2rem;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .styled-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .inline-form {
+    display: inline;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f1f1f1;
+  }
+/* About Section Title */
+.about-title {
+    color: #007bff; /* Change this to your desired color */
+    font-size: 2.5rem; /* Larger font size for prominence */
+    font-weight: bold; /* Make it bold */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+/* About Section Paragraphs */
+.about-section p {
+    color: #555; /* Darker gray for better readability */
+    line-height: 1.6; /* Improve line spacing */
+    margin-bottom: 15px; /* Space between paragraphs */
+}  
