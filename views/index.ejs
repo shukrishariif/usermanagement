@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"> <!-- Custom styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                    <a href="/add" class="btn btn-sm btn-primary">+ New User</a> <!-- Changed to btn-primary -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Flash Messages -->
+        <% if (messages && messages.length > 0) { %>
+            <% messages.forEach(element => { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= element %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% }) %>
+        <% } %>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Tell (tel)</th>
+                        <th scope="col" class="text-end">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customers.forEach(element => { %>
+                        <tr class="align-middle">
+                            <td><%= element.firstName %></td>
+                            <td><%= element.lastName %></td>
+                            <td><%= element.email %></td>
+                            <td><%= element.tel %></td>
+                            <td class="text-end">
+                                <div class="d-flex flex-row justify-content-end gap-2">
+                                    <a href="/view/<%= element._id %>" class="btn btn-primary btn-small">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="/edit/<%= element._id %>" class="btn btn-warning btn-small">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <form action="/edit/<%= element._id %>?_method=DELETE" method="POST" class="position-relative">
+                                        <button type="submit" class="btn btn-danger btn-small">
+                                            <i class="bi bi-person-x"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
